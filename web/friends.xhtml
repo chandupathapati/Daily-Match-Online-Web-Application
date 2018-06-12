@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        
+    </h:head>
+    <h:body>
+                 
+            <div>
+            <ui:insert name='header'>
+                <ui:include src="ProfileHeader.xhtml"/>
+                            
+            </ui:insert>
+        </div>
+        <div>
+            <ui:insert name='center'>
+                <table class="table">
+                    <tr>
+                        <th>Accepted Friends </th>
+                        <th>Pending Friends</th>
+                        <th>Denied Friends</th>
+                    </tr>
+                    <tr>   
+                        <td>
+                <h:form>
+              <h:outputLabel>#{searchprofile.friendslist()}</h:outputLabel>
+                 <h:dataTable id="statement" 
+                      rows ="#{searchprofile.flist().size()}" 
+                      value="#{searchprofile.flist()}" var="str">  
+                <h:column>  
+                      <h:outputText styleClass="dataTableOutputText" 
+                                id="activity" value="#{str}"/>  
+                           <br>
+                    
+                </br>
+                <h:commandButton id="return" value="send message" immediate="true"
+                                 action="#{searchprofile.viewporfile(str)}" />
+                </h:column>  
+                
+           
+            </h:dataTable>
+                          </h:form>
+                    </td>
+                        
+                        <td>
+                        <h:form>
+              <h:outputLabel>#{searchprofile.pendinglist()}</h:outputLabel>
+                 <h:dataTable id="statement1" 
+                      rows ="#{searchprofile.flist().size()}" 
+                      value="#{searchprofile.flist()}" var="str">  
+                <h:column>  
+                      <h:outputText styleClass="dataTableOutputText" 
+                                id="activity1" value="#{str}"/>  
+                           
+                <h:commandButton id="return1" value="accept" immediate="true"
+                                 action="#{searchprofile.Acceptfriend(str)}" />
+                  <h:commandButton id="return2" value="deny" immediate="true"
+                                 action="#{searchprofile.Denyfriend(str)}" />
+                </h:column>  
+                
+           
+            </h:dataTable>
+              
+                          </h:form>
+                        </td>
+                        <td>
+                          <h:form>
+                            <h:outputLabel>#{searchprofile.Deniedlist()}</h:outputLabel>
+                 <h:dataTable id="statement2" 
+                      rows ="#{searchprofile.dflist().size()}" 
+                      value="#{searchprofile.dflist()}" var="str">  
+                <h:column>  
+                      <h:outputText styleClass="dataTableOutputText" 
+                                id="activity1" value="#{str}"/>  
+                </h:column>
+                 </h:dataTable>
+                            </h:form>
+                        </td>
+                        
+                        
+                        
+                        
+                    </tr>  
+                     </table>
+            </ui:insert>
+        </div>
+        <div>
+            <ui:insert name='footer'>
+               <!-- <ui:include src="index.xhtml"/>-->
+                            
+            </ui:insert>
+        </div>
+              
+            </h:body>
+</html>
+

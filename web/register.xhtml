@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+       <!--
+             <div>
+            <ui:insert name='header'>
+                <ui:include src="HeaderPage.xhtml"/>
+                            
+            </ui:insert>
+        </div>
+        
+        -->
+        <div>
+            <ui:insert name='center'>
+                <h:form>
+        <h3>Register</h3>
+        
+        <p>Please enter Email ID<br></br>
+         <h:inputText id="userid" required ="true" 
+                             requiredMessage="The userid field cannot be empty"
+                        title="Please enter your USER ID"
+                        value="#{registration.emailid}"
+                        validatorMessage="Pleause use a correct format 
+                        for your social security number">
+               
+         </h:inputText>
+        </p>
+        
+         <p>Please enter password:<br></br>
+         <h:inputSecret id="pwd" required ="true" 
+                             requiredMessage="The pwd field cannot be empty"
+                        title="Please enter your password"
+                        value="#{registration.password}"
+                        >
+         </h:inputSecret>
+         </p>
+        
+        <p>Please enter your First Name: <br></br>
+         <h:inputText id="firstname" required ="true" 
+                             requiredMessage="The name field cannot be empty"
+                        title="Please enter your Name"
+                        value="#{registration.firstName}"
+                        >
+         </h:inputText>
+             
+        </p>
+        
+        
+        
+        <p>Please enter your Last Name: <br></br>
+         <h:inputText id="lastname" required ="true" 
+                             requiredMessage="The name field cannot be empty"
+                        title="Please enter your Name"
+                        value="#{registration.lastName}"
+                        >
+         </h:inputText>
+             
+        </p>
+        
+        
+        
+        <p>Gender <br></br>
+         <h:selectOneRadio value = "#{registration.gender}">
+            <f:selectItem itemValue = "M" itemLabel = "M" />
+            <f:selectItem itemValue = "F" itemLabel = "F" />
+           </h:selectOneRadio>	   		
+           
+        </p>        
+        <p>Please enter your Age <br></br>
+         <h:inputText id="age" required ="true" 
+                             requiredMessage="The age field cannot be empty"
+                        title="Please enter your age"
+                        value="#{registration.age}"
+                        >
+         </h:inputText>
+        </p>
+        
+        <p>Please enter your City <br></br>
+         <h:inputText id="city" required ="true" 
+                         
+                        title="Please enter your City"
+                        value="#{registration.city}"
+                        >
+         </h:inputText>
+        </p>
+        
+         <p>Please enter your Interest <br></br>
+         <h:inputText id="i1" required ="true" 
+                         
+                        title="Please enter your City"
+                        value="#{registration.i1}"
+                        >
+         </h:inputText>
+        </p>
+        
+         <p>Please enter your Interest <br></br>
+         <h:inputText id="i2" required ="true" 
+                         
+                        title="Please enter your City"
+                        value="#{registration.i2}"
+                        >
+         </h:inputText>
+        </p>
+        
+         <p>Please enter your Interest <br></br>
+         <h:inputText id="i3" required ="true" 
+                         
+                        title="Please enter your City"
+                        value="#{registration.i3}"
+                        >
+         </h:inputText>
+        </p>
+        
+         <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{registration.registration()}" />
+            </p>
+        </h:form>
+                <h:outputLabel>#{registration.message}</h:outputLabel>   
+               
+            </ui:insert>
+        </div>
+        <div>
+            <ui:insert name='footer'>
+               <!-- <ui:include src="index.xhtml"/>-->
+                            
+            </ui:insert>
+        </div>
+        
+      
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+       
+    </h:body>
+</html>
+
